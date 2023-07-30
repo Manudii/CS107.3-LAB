@@ -1,0 +1,108 @@
+using System;
+
+namespace Array
+{
+    public class ArrayProcessor
+    {
+        public void ProcessArray(int[] arr)
+        {
+            int min = FindMinimum(arr);
+            int max = FindMaximum(arr);
+            double avg = FindAverage(arr);
+            int[] reversedArr = ReverseArray(arr);
+
+            Console.WriteLine($"Minimum value: {min}");
+            Console.WriteLine($"Maximum value: {max}");
+            Console.WriteLine($"Average value: {avg}");
+            Console.WriteLine("Reversed order of values:");
+            PrintArray(reversedArr);
+        }
+
+        private int FindMinimum(int[] arr)
+        {
+            int min = arr[0];
+            for (int i = 1; i < arr.Length; i++)
+            {
+                if (arr[i] < min)
+                {
+                    min = arr[i];
+                }
+            }
+            return min;
+        }
+
+        private int FindMaximum(int[] arr)
+        {
+            int max = arr[0];
+            for (int i = 1; i < arr.Length; i++)
+            {
+                if (arr[i] > max)
+                {
+                    max = arr[i];
+                }
+            }
+            return max;
+        }
+
+        private double FindAverage(int[] arr)
+        {
+            int sum = 0;
+            foreach (int num in arr)
+            {
+                sum += num;
+            }
+            return (double)sum / arr.Length;
+        }
+
+        private int[] ReverseArray(int[] arr)
+        {
+            int[] reversedArr = new int[arr.Length];
+            for (int i = 0; i < arr.Length; i++)
+            {
+                reversedArr[i] = arr[arr.Length - 1 - i];
+            }
+            return reversedArr;
+        }
+
+        private void PrintArray(int[] arr)
+        {
+            foreach (int num in arr)
+            {
+                Console.Write($"{num} ");
+            }
+            Console.WriteLine();
+        }
+    }
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int[] array = new int[10];
+
+            Console.WriteLine("Enter 10 integer values for the array:");
+
+            for (int i = 0; i < array.Length; i++)
+            {
+                Console.Write($"Element {i + 1}: ");
+                string input = Console.ReadLine();
+
+                if (int.TryParse(input, out int value))
+                {
+                    array[i] = value;
+                }
+                else
+                {
+                    Console.WriteLine("Invalid input. Please enter a valid integer.");
+                    i--;
+                }
+            }
+
+            ArrayProcessor processor = new ArrayProcessor();
+            processor.ProcessArray(array);
+
+            Console.ReadLine();
+        }
+    }
+}
+
