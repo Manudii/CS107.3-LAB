@@ -1,0 +1,16 @@
+
+namespace Lab
+{
+ internal class Program
+ {
+ static void Main(string[] args)
+ {
+ Console.WriteLine("Enter Salary: ");
+ double salary =double.Parse(Console.ReadLine());
+ Console.WriteLine("Enter Tax Rate: ");
+ double tax = double.Parse(Console.ReadLine());
+ double newsalary = salary - (salary * tax / 100);
+ Console.WriteLine("Salary After Tax: " + newsalary);
+ Console.ReadLine();
+ }
+ }
