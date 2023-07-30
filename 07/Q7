@@ -1,0 +1,124 @@
+using System;
+
+namespace Arrayvalues
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Write("Enter the size of the arrays: ");
+            if (int.TryParse(Console.ReadLine(), out int size) && size > 0)
+            {
+                int[] array1 = new int[size];
+                int[] array2 = new int[size];
+
+                 
+                Console.WriteLine("Enter values for Array 1:");
+                for (int i = 0; i < size; i++)
+                {
+                    Console.Write($"Element {i + 1}: ");
+                    if (int.TryParse(Console.ReadLine(), out int value))
+                    {
+                        array1[i] = value;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Invalid input. Please enter a valid integer.");
+                        i--;
+                    }
+                }
+
+ 
+                Console.WriteLine("\nEnter values for Array 2:");
+                for (int i = 0; i < size; i++)
+                {
+                    Console.Write($"Element {i + 1}: ");
+                    if (int.TryParse(Console.ReadLine(), out int value))
+                    {
+                        array2[i] = value;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Invalid input. Please enter a valid integer.");
+                        i--;
+                    }
+                }
+
+                 
+                int scalarSum = ScalarSum(array1) + ScalarSum(array2);
+                Console.WriteLine($"Scalar Sum: {scalarSum}");
+
+                 
+                int[] vectorSum = VectorSum(array1, array2);
+                Console.WriteLine("Vector Sum:");
+                PrintArray(vectorSum);
+
+                 
+                int[] vectorProduct = VectorProduct(array1, array2);
+                Console.WriteLine("Vector Product:");
+                PrintArray(vectorProduct);
+
+                
+                int scalarProduct = ScalarProduct(array1, array2);
+                Console.WriteLine($"Scalar Product: {scalarProduct}");
+            }
+            else
+            {
+                Console.WriteLine("Invalid input. Please enter a valid positive integer for the size.");
+            }
+
+            Console.ReadLine();
+        }
+
+        static int ScalarSum(int[] arr)
+        {
+            int sum = 0;
+            foreach (int num in arr)
+            {
+                sum += num;
+            }
+            return sum;
+        }
+
+        static int[] VectorSum(int[] arr1, int[] arr2)
+        {
+            int[] result = new int[arr1.Length];
+            for (int i = 0; i < arr1.Length; i++)
+            {
+                result[i] = arr1[i] + arr2[i];
+            }
+            return result;
+        }
+
+        static int[] VectorProduct(int[] arr1, int[] arr2)
+        {
+            int[] result = new int[arr1.Length];
+            for (int i = 0; i < arr1.Length; i++)
+            {
+                result[i] = arr1[i] * arr2[i];
+            }
+            return result;
+        }
+
+        static int ScalarProduct(int[] arr1, int[] arr2)
+        {
+            int[] productArray = VectorProduct(arr1, arr2);
+            int sum = 0;
+            foreach (int num in productArray)
+            {
+                sum += num;
+            }
+            return sum;
+        }
+
+        static void PrintArray(int[] arr)
+        {
+            foreach (int num in arr)
+            {
+                Console.Write($"{num} ");
+            }
+            Console.WriteLine();
+        }
+    }
+}
+
