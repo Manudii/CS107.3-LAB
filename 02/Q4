@@ -1,0 +1,18 @@
+namespace Lab
+{
+ internal class Program
+ {
+ static void Main(string[] args)
+ {
+ Console.WriteLine("Enter a number: ");
+ double num = double.Parse(Console.ReadLine());
+ if (num % 2 == 0)
+ {
+ Console.WriteLine("This is an Even Number");
+ }
+ else
+ Console.WriteLine("This is an Odd Number");
+ Console.ReadLine();
+ }
+ }
+}
