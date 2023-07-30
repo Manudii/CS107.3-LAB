@@ -1,0 +1,16 @@
+namespace Lab
+{
+ internal class Program
+ {
+ static void Main(string[] args)
+ {
+ Console.WriteLine("Enter Number 01: ");
+ double num1 =double.Parse(Console.ReadLine());
+ Console.WriteLine("Enter Number 02: ");
+ double num2 = double.Parse(Console.ReadLine());
+ double sum = num1 + num2;
+ Console.WriteLine("Sum: " + sum);
+ Console.ReadLine();
+ }
+ }
+}
