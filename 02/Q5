@@ -1,0 +1,20 @@
+namespace Lab
+{
+ internal class Program
+ {
+ static void Main(string[] args)
+ {
+ for (int count = 0; count<10; count++)
+ {
+ Console.WriteLine("Enter number: ");
+ double num = double.Parse(Console.ReadLine());
+ if (num % 2 == 0)
+ {
+ Console.WriteLine("Even Number");
+ }
+ else
+ Console.WriteLine("Odd Number");
+ }
+ Console.ReadLine();
+ }
+ }
