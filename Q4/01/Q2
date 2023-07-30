@@ -1,0 +1,12 @@
+using System;
+
+namespace noreturnwithpara
+{
+    public class ConvertValues
+    {
+        public void KilometerToMeter(double km)
+        {
+            double meter = km * 1000;
+            Console.WriteLine($"The distance in meters (m) is: {meter} m");
+        }
+    }
