@@ -1,0 +1,22 @@
+namespace Lab
+{
+ internal class Program
+ {
+ static void Main(string[] args)
+ {
+ Console.WriteLine("Enter Number 01: ");
+ double num1 =double.Parse(Console.ReadLine());
+ Console.WriteLine("Enter Number 02: ");
+ double num2 = double.Parse(Console.ReadLine());
+ double sum = num1 + num2;
+ double sub = num1 - num2;
+ double mul = num1 * num2;
+ double div = num2 / num2;
+ Console.WriteLine("Total: " + sum);
+ Console.WriteLine("Subtraction: " + sub);
+ Console.WriteLine("Multiplication: " + mul);
+ Console.WriteLine("Division: " + div);
+ Console.ReadLine();
+ }
+ }
+}
