@@ -1,0 +1,35 @@
+using System;
+
+namespace ConsoleApp
+{
+    public class Greetings
+    {
+        private void SayHello()
+        {
+            Console.WriteLine("Hello, World!");
+        }
+    }
+}
+
+
+ Program cs,
+  
+using System;
+
+namespace ConsoleApp
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Greetings greetingsObject = new Greetings();
+
+ 
+            greetingsObject.SayHello();
+
+            Console.ReadLine();
+        }
+    }
+}
+
+
